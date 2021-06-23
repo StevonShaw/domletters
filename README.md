@@ -29,12 +29,10 @@ upper and lowercase letters as equivalent. Examples:
 
 ## Build and Run
 
-(*These instructions are for an interpreted language like
-Python. For a compiled language like C++, delete these
-instructions and use those above. Note that your script
-should be marked executable and set up to run on a Linux box
-using a standard interpreter: for example, in Python the
-first line should be something like `#!/usr/bin/python3`.*)
+(*Note that your script should be marked executable
+and set up to run on a Linux box using a standard 
+interpreter: for example, in Python the first line should 
+be something like `#!/usr/bin/python3`.*)
 
 To run the program, say
 
