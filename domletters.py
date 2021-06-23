@@ -21,6 +21,30 @@ def isValidWord(word):
             return False
     return True
 
+def countDominateLetter(word):
+    """Counts the occurences of each letter in the word, and returns the highest count seen.
+    
+    Args:
+        word (string): the string to be analyzed.
+
+    Returns:
+        int: the number of times the highest seen character has appeared.
+    """
+    # Build map of characters to ints. Representing a letters and the number of times that letter was seen.
+    characters_seen = dict()
+    for char in word.lower():
+        if char in characters_seen:
+            characters_seen[char] += 1
+        else:
+            characters_seen[char] = 1
+    
+    # Find the highest occurance of a letter.
+    highest = 0
+    for char in characters_seen.keys():
+        if characters_seen[char] > highest:
+            highest = characters_seen[char]
+    return highest
+
 # Check for present command line argument.
 if len(sys.argv) != 2:
     usage()
@@ -39,7 +63,14 @@ except FileNotFoundError:
 # Split the input string into words.
 words = full_input_string.split() 
 
+# Split the input string into words.
+words = full_input_string.split() 
 
+# Sum the count of each valid words' dominate letter.
+total = 0
 for word in words:
     if isValidWord(word):
-        print(word)
+        total += countDominateLetter(word)
+
+
+print("The count of all the dominate letters in each valid word is:", total)
